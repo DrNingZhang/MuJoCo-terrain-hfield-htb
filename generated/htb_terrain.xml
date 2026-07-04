@@ -1,0 +1,15 @@
+<mujoco model="htb_terrain">
+  <compiler angle="radian" coordinate="local"/>
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+  <asset>
+    <hfield name="htb_terrain" file="htb_terrain.hfield" size="14.975 10.975 3.275 0.05"/>
+  </asset>
+  <worldbody>
+    <light name="light_corner_00" pos="0 0 10.4825" dir="1 1 -2" diffuse="0.8 0.8 0.8"/>
+    <light name="light_corner_10" pos="29.95 0 10.4825" dir="-1 1 -2" diffuse="0.8 0.8 0.8"/>
+    <light name="light_corner_01" pos="0 21.95 10.4825" dir="1 -1 -2" diffuse="0.8 0.8 0.8"/>
+    <light name="light_corner_11" pos="29.95 21.95 10.4825" dir="-1 -1 -2" diffuse="0.8 0.8 0.8"/>
+    <geom name="terrain" type="hfield" hfield="htb_terrain" pos="14.975 10.975 -2.04" friction="1.0 0.005 0.0001"/>
+
+  </worldbody>
+</mujoco>
