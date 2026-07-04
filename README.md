@@ -103,3 +103,53 @@ raw int16 height units to meters.
 This release does not require Isaac Gym, Legged Gym, RSL-RL, torch/PyTorch,
 wandb, pyfqmr, or pydelatin. It does not require the original simulator or
 training stack.
+
+## Terrain examples
+
+The exporter can generate both mixed HTB-style terrain maps and individual terrain types. Each terrain is exported as a MuJoCo `hfield` asset together with a minimal MJCF file for visualization and simulation.
+
+> The screenshots below are rendered in MuJoCo from the generated `htb_terrain.xml` files. The grey border around each terrain is the hfield base area used by MuJoCo.
+
+### Mixed terrain map
+
+The default multi-tile export combines several terrain primitives into one heightfield map, including stairs, waves, uneven ground, gaps, and obstacle-like structures. This is useful for quickly checking whether the exporter can stitch multiple HTB terrain types into a single MuJoCo-compatible hfield.
+
+```bash
+python export_mujoco_hfield.py --out generated --rows 2 --cols 3 --seed 0 --preview
+python visualize_mujoco.py --xml generated/htb_terrain.xml
+```
+
+![Mixed HTB terrain rendered in MuJoCo](pictures/generated.png)
+
+### Bridge terrain
+
+The bridge terrain contains narrow elevated paths and lower surrounding regions. It is useful for testing balance, foot placement, and traversal over constrained support areas.
+
+```bash
+python export_mujoco_hfield.py --out generated_bridge --terrain bridge --difficulty 0.8 --single --preview
+python visualize_mujoco.py --xml generated_bridge/htb_terrain.xml
+```
+
+![Bridge terrain rendered in MuJoCo](pictures/generated_bridge.png)
+
+### Gap terrain
+
+The gap terrain creates separated traversable regions with depressions or missing sections between them. It is useful for testing stepping, jumping, or gap-crossing behaviors in a MuJoCo-based locomotion environment.
+
+```bash
+python export_mujoco_hfield.py --out generated_gap --terrain gap --difficulty 0.8 --single --preview
+python visualize_mujoco.py --xml generated_gap/htb_terrain.xml
+```
+
+![Gap terrain rendered in MuJoCo](pictures/generated_gap.png)
+
+### Stair terrain
+
+The stair terrain creates a stepped heightfield with configurable difficulty. It is useful for testing stair-climbing behavior and validating that height discontinuities are preserved after conversion to MuJoCo hfield format.
+
+```bash
+python export_mujoco_hfield.py --out generated_stair --terrain stair --difficulty 0.8 --single --preview
+python visualize_mujoco.py --xml generated_stair/htb_terrain.xml
+```
+
+![Stair terrain rendered in MuJoCo](pictures/generated_stair.png)
