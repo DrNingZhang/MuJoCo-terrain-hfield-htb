@@ -1,0 +1,194 @@
+{
+  "add_test_ball": false,
+  "base_z": 0.05,
+  "config": {
+    "add_roughness": true,
+    "border_size": 5.0,
+    "curriculum": true,
+    "downsampled_scale": 0.075,
+    "forced_difficulty": 0.8,
+    "horizontal_scale": 0.05,
+    "num_cols": 1,
+    "num_goals": 10,
+    "num_rows": 1,
+    "origin_zero_z": true,
+    "platform_size": 2.5,
+    "roughness_height": [
+      0.02,
+      0.06
+    ],
+    "roughness_step": 0.005,
+    "selected_terrain": "gap",
+    "terrain_length": 10.0,
+    "terrain_proportions": [
+      [
+        "single",
+        0,
+        1.0
+      ],
+      [
+        "single",
+        1,
+        1.0
+      ],
+      [
+        "single",
+        2,
+        1.0
+      ],
+      [
+        "single",
+        3,
+        1.0
+      ],
+      [
+        "single",
+        4,
+        1.0
+      ],
+      [
+        "single",
+        5,
+        1.0
+      ],
+      [
+        "single",
+        6,
+        1.0
+      ],
+      [
+        "single",
+        7,
+        1.0
+      ],
+      [
+        "single",
+        8,
+        1.0
+      ],
+      [
+        "single",
+        9,
+        1.0
+      ]
+    ],
+    "terrain_width": 4.0,
+    "vertical_scale": 0.005
+  },
+  "env_origins": [
+    [
+      [
+        1.0,
+        2.0,
+        0.0
+      ]
+    ]
+  ],
+  "expected_hfield_file_size": 448008,
+  "files": {
+    "height_m": "generated_gap\\terrain_height_m.npy",
+    "height_raw": "generated_gap\\terrain_height_raw.npy",
+    "hfield": "generated_gap\\htb_terrain.hfield",
+    "metadata": "generated_gap\\terrain_metadata.json",
+    "preview": "generated_gap\\preview.png",
+    "xml": "generated_gap\\htb_terrain.xml"
+  },
+  "format": "mujoco_hfield",
+  "full_x": 19.950000000000003,
+  "full_y": 13.950000000000001,
+  "goals": [
+    [
+      [
+        [
+          2.5,
+          2.0,
+          0.0
+        ],
+        [
+          3.25,
+          2.0,
+          0.0
+        ],
+        [
+          4.0,
+          2.0,
+          0.0
+        ],
+        [
+          4.75,
+          2.0,
+          0.0
+        ],
+        [
+          5.5,
+          2.0,
+          0.0
+        ],
+        [
+          6.25,
+          2.0,
+          0.0
+        ],
+        [
+          7.0,
+          2.0,
+          0.0
+        ],
+        [
+          7.75,
+          2.0,
+          0.0
+        ],
+        [
+          8.5,
+          2.0,
+          0.0
+        ],
+        [
+          9.25,
+          2.0,
+          0.0
+        ]
+      ]
+    ]
+  ],
+  "h_max": 0.05,
+  "h_min": -2.05,
+  "h_range": 2.0999999999999996,
+  "hfield_file_size": 448008,
+  "horizontal_scale": 0.05,
+  "light_height": 8.1,
+  "orientation": {
+    "flip_x": false,
+    "flip_y": false,
+    "transpose": false
+  },
+  "seed": null,
+  "shape": [
+    400,
+    280
+  ],
+  "terrain": {
+    "available": [
+      "bridge",
+      "flat",
+      "gap",
+      "hurdle",
+      "parkour",
+      "plot",
+      "slope",
+      "stair",
+      "uneven",
+      "wave"
+    ],
+    "difficulty": 0.8,
+    "selected": "gap",
+    "single": true
+  },
+  "terrain_type": [
+    [
+      8
+    ]
+  ],
+  "vertical_scale": 0.005
+}
