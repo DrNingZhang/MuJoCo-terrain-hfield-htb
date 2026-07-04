@@ -98,17 +98,6 @@ python export_mujoco_hfield.py --horizontal-scale 0.05 --vertical-scale 0.005
 `horizontal_scale` is the x/y grid spacing in meters. `vertical_scale` converts
 raw int16 height units to meters.
 
-## Known Differences From Original HTB
-
-- The original simulator terrain utility roughness path is replaced with a
-  numpy/scipy implementation that samples low-resolution random heights and
-  interpolates them to the target grid. It is statistically similar but not
-  pixel-identical.
-- Mesh generation and simplification paths were removed. MuJoCo hfield output
-  is the supported and recommended representation.
-- This project only converts terrain. For humanoid training, connect the
-  generated hfield to your own MuJoCo, MJX, or gymnasium environment.
-
 ## Dependencies Not Required
 
 This release does not require Isaac Gym, Legged Gym, RSL-RL, torch/PyTorch,
